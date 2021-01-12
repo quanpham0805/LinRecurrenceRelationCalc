@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_coeff"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:textSize="18sp"
+        android:text="C100 = " />
+
+    <EditText
+        android:id="@+id/edit_coeff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLength="9"
+        android:inputType="number"
+        android:textSize="22sp" />
+
+</LinearLayout>

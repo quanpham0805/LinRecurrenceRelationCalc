@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Linear Recurrence Relation Calculator</string>
+    <string name="definition_recurrence">A linear recurrence relation is an equation that defines the n-th term in a sequence in terms of the k previous terms in the sequence. The recurrence relation is in the form: $$x_n = c_kx_{n-1} + c_{k - 1}x_{n-2} + ... + c_1x_{n - k}$$</string>
+</resources>

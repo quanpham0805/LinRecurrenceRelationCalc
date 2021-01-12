@@ -1,0 +1,169 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        tools:context=".FragmentMain">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Definition:"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <io.github.kexanie.library.MathView
+            android:id="@+id/formula_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            auto:engine="MathJax"
+            auto:text="@string/definition_recurrence" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="24dp">
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Number of pre-defined terms (Max: 100)"
+                android:textSize="17sp"
+                auto:layout_constraintEnd_toEndOf="parent"
+                auto:layout_constraintStart_toStartOf="parent"
+                auto:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_add"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/success"
+                android:text="+"
+                android:textSize="25sp"
+                auto:layout_constraintLeft_toLeftOf="parent"
+                auto:layout_constraintRight_toLeftOf="@id/tv_terms"
+                auto:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+            <TextView
+                android:id="@+id/tv_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="1"
+                android:textSize="22sp"
+                auto:layout_constraintLeft_toRightOf="@id/button_add"
+                auto:layout_constraintRight_toLeftOf="@id/button_subtract"
+                auto:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+            <Button
+                android:id="@+id/button_subtract"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/danger"
+                android:text="-"
+                android:textSize="25sp"
+                auto:layout_constraintLeft_toRightOf="@id/tv_terms"
+                auto:layout_constraintRight_toRightOf="parent"
+                auto:layout_constraintTop_toBottomOf="@id/tv_1" />
+
+
+            <EditText
+                android:id="@+id/edit_modulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="Modulo (Max: 10^18 - 1)"
+                android:inputType="number"
+                android:maxLength="18"
+                android:textSize="17sp"
+                auto:layout_constraintLeft_toLeftOf="parent"
+                auto:layout_constraintRight_toRightOf="parent"
+                auto:layout_constraintTop_toBottomOf="@id/button_subtract" />
+
+            <EditText
+                android:id="@+id/edit_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="Result term? (Max: 10^18 - 1)"
+                android:inputType="number"
+                android:maxLength="18"
+                android:textSize="17sp"
+                auto:layout_constraintLeft_toLeftOf="parent"
+                auto:layout_constraintRight_toRightOf="parent"
+                auto:layout_constraintTop_toBottomOf="@id/edit_modulo" />
+
+            <Button
+                android:id="@+id/button_config"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/info"
+                android:text="Add coeffs"
+                auto:layout_constraintEnd_toStartOf="@id/button_terms"
+                auto:layout_constraintStart_toStartOf="parent"
+                auto:layout_constraintTop_toBottomOf="@+id/edit_result" />
+
+            <Button
+                android:id="@+id/button_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/info"
+                android:text="Add terms"
+                auto:layout_constraintEnd_toEndOf="parent"
+                auto:layout_constraintStart_toEndOf="@id/button_config"
+                auto:layout_constraintTop_toBottomOf="@+id/edit_result" />
+
+            <Button
+                android:id="@+id/button_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/success"
+                android:text="Calculate"
+                auto:layout_constraintEnd_toStartOf="@id/button_reset"
+                auto:layout_constraintStart_toStartOf="parent"
+                auto:layout_constraintTop_toBottomOf="@id/button_config" />
+
+            <Button
+                android:id="@+id/button_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/danger"
+                android:text="Reset"
+                auto:layout_constraintEnd_toEndOf="parent"
+                auto:layout_constraintStart_toEndOf="@id/button_calc"
+                auto:layout_constraintTop_toBottomOf="@id/button_config" />
+
+            <TextView
+                android:id="@+id/tv_ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Answer = "
+                android:textAlignment="center"
+                android:textSize="25sp"
+                auto:layout_constraintEnd_toEndOf="parent"
+                auto:layout_constraintStart_toStartOf="parent"
+                auto:layout_constraintTop_toBottomOf="@id/button_calc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
