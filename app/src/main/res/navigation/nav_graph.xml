@@ -22,11 +22,12 @@
     <fragment
         android:id="@+id/FragmentConfig"
         android:name="com.example.linrecurrencerelation.FragmentConfig"
-        android:label="Configuration"
+        android:label="Modify coefficients"
         tools:layout="@layout/fragment_config">
     </fragment>
     <fragment
         android:id="@+id/fragmentTerms"
         android:name="com.example.linrecurrencerelation.FragmentTerms"
-        android:label="FragmentTerms" />
+        android:label="Modify terms"
+        tools:layout="@layout/fragment_terms"/>
 </navigation>
